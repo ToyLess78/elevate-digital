@@ -805,6 +805,30 @@
         <div class="section__body">
             <div class="contact-us">
                 <form class="contact-us__form">
+                    <fieldset class="contact-us__request-types radios">
+                        <legend class="radios__title visually-hidden">Request type</legend>
+                        <label class="radios__item radio">
+                            <input
+                                    class="radio__input visually-hidden"
+                                    name="request-type"
+                                    type="radio"
+                                    value="Say Hi"
+                                    checked
+                            />
+                            <span class="radio__emulator"></span>
+                            <span class="radio__label">Say Hi</span>
+                        </label>
+                        <label class="radios__item radio">
+                            <input
+                                    class="radio__input visually-hidden"
+                                    name="request-type"
+                                    type="radio"
+                                    value="Get a Quote"
+                            />
+                            <span class="radio__emulator"></span>
+                            <span class="radio__label">Get a Quote</span>
+                        </label>
+                    </fieldset>
                     <button
                             class="contact-us__button button"
                             type="submit"

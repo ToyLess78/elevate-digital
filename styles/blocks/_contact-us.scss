@@ -5,7 +5,7 @@
   @include mobile-above {
     padding: 60px 100px 80px;
     background-color: var(--color-gray);
-    border-radius: var(--border-radius-large);
+    border-radius: var(--border-radius);
   }
 
   &::after {
@@ -44,8 +44,8 @@
     @include mobile {
       padding: 40px 52px 36px;
       border-radius:
-        var(--border-radius-large)
-        var(--border-radius-large)
+        var(--border-radius)
+        var(--border-radius)
         0
         0;
     }
@@ -71,8 +71,8 @@
       border-radius:
         0
         0
-        var(--border-radius-large)
-        var(--border-radius-large);
+        var(--border-radius)
+        var(--border-radius);
     }
   }
 }

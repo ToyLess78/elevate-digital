@@ -12,6 +12,7 @@
   @include hover {
     color: var(--color-dark);
     background-color: var(--color-accent);
+    cursor: pointer;
   }
 
   &--transparent {

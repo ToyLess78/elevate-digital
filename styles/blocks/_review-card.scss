@@ -17,7 +17,7 @@
     position: relative;
     padding: 48px var(--reviewCardCornerOffsetLeft) 52px;
     border: 1px solid var(--color-accent);
-    border-radius: var(--border-radius-large);
+    border-radius: var(--border-radius);
 
     @include mobile {
       padding: 30px;

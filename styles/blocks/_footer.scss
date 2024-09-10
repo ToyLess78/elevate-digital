@@ -10,7 +10,7 @@
 
     @include mobile-above {
       border-radius:
-        var(--border-radius-large) var(--border-radius-large)
+        var(--border-radius) var(--border-radius)
         0 0;
     }
 

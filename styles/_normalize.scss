@@ -1,5 +1,6 @@
+@charset "UTF-8";
 /**
-  Нормализация блочной модели
+  Normalization of the box model
  */
 *,
 *::before,
@@ -8,16 +9,14 @@
 }
 
 /**
-  Убираем внутренние отступы слева тегам списков,
-  у которых есть атрибут class
+  Remove left padding from list elements with a class attribute
  */
 :where(ul, ol):where([class]) {
   padding-left: 0;
 }
 
 /**
-  Убираем внешние отступы body и двум другим тегам,
-  у которых есть атрибут class
+  Remove margin from body and two other elements with a class attribute
  */
 body,
 :where(blockquote, figure):where([class]) {
@@ -25,21 +24,18 @@ body,
 }
 
 /**
-  Убираем внешние отступы вертикали нужным тегам,
-  у которых есть атрибут class
+  Remove vertical margins from specific elements with a class attribute
  */
-:where(
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  dl
-):where([class]) {
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
   margin-block: 0;
 }
 
@@ -54,35 +50,31 @@ body,
 }
 
 /**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
+  Remove default bullet points from unordered lists with a class attribute
  */
 :where(ul[class]) {
   list-style: none;
 }
 
 /**
-  Обнуляем вертикальные внешние отступы параграфа,
-  объявляем локальную переменную для внешнего отступа вниз,
-  чтобы избежать взаимодействие с более сложным селектором
+  Reset vertical margins for paragraphs, 
+  declare a local variable for bottom margin to avoid interaction with more complex selectors
  */
 p {
   --paragraphMarginBottom: 24px;
-
   margin-block: 0;
 }
 
 /**
-  Внешний отступ вниз для параграфа без атрибута class,
-  который расположен не последним среди своих соседних элементов
+  Apply bottom margin to paragraphs without a class attribute
+  that are not the last among sibling elements
  */
 p:where(:not([class]):not(:last-child)) {
   margin-bottom: var(--paragraphMarginBottom);
 }
 
-
 /**
-  Упрощаем работу с изображениями
+  Simplify handling of images
  */
 img {
   display: block;
@@ -90,7 +82,7 @@ img {
 }
 
 /**
-  Наследуем свойства шрифт для полей ввода
+  Inherit font properties for input fields
  */
 input,
 textarea,
@@ -101,44 +93,48 @@ button {
 
 html {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
+    Useful in most situations
+    (for example, when you need to "stick" the footer to the bottom of the site)
    */
   height: 100%;
   /**
-    Плавный скролл
+    Smooth scrolling
    */
   scroll-behavior: smooth;
 }
 
 body {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
+    Useful in most situations
+    (for example, when you need to "stick" the footer to the bottom of the site)
    */
   min-height: 100%;
   /**
-    Унифицированный интерлиньяж
+    Unified line-height
    */
   line-height: 1.5;
 }
 
 /**
-  Приводим к единому цвету svg-элементы
+  Apply a unified color to SVG elements
  */
-svg *[fill] { fill: currentColor }
-svg *[stroke] { stroke: currentColor }
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
 
 /**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  Fix the issue with delayed color change when interacting with SVG elements
  */
 svg * {
   transition-property: fill, stroke;
 }
 
 /**
-  Удаляем все анимации и переходы для людей,
-  которые предпочитают их не использовать
+  Remove all animations and transitions for people who prefer not to use them
  */
 @media (prefers-reduced-motion: reduce) {
   * {
